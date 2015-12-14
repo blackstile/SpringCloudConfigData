@@ -3,6 +3,16 @@ eureka:
     client:
         serviceUrl:
             defaultZone: http://localhost:8010/eureka/,http://eureka-primary:8011/eureka,http://eureka-secundary:8012/eureka/,http://eureka-tertiary:8013/eureka/
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+
+---
+spring:
+  profiles: sentence
+server:
+  port: 8020  
+words: NotApplicable
+
 ---
 spring:
     profiles: subject
@@ -16,7 +26,7 @@ words: ran,knew,had,saw,bought
 ---
 spring:
     profiles: article
-words: a, the
+words: a,the
 
 ---
 spring:
